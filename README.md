@@ -11,6 +11,9 @@
  always makes the Emit/Emit All button visible so you can focus on your particle properties rather than scrolling back and 
  forth to test.
 
+Installation:
+The vkaParticleTool folder needs to be in the res://addons folder in your Godot project.  Then goto menu Project->Project Settings->Plugins and make sure vkaParticleTool is checked/enabled.
+
  These are the features:
 
  Emit Button - Emits the currently selected particle (i.e. sets emitting = true)
