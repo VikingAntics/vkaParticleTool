@@ -16,6 +16,8 @@ Installation:
  The vkaParticleTool folder needs to be in the res://addons folder in your Godot project.  Then goto menu Project->Project Settings->Plugins and make sure vkaParticleTool is checked/enabled.
 
  These are the features:
+	
+ The vkaParticleTool Panel only becomes visible if you select a valid Particle Node in the Scene Inspector.
 
  Emit Button - Emits the currently selected particle (i.e. sets emitting = true)
  

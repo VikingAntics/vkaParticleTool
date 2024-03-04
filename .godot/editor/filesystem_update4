@@ -1,2 +1,4 @@
 res://ParticleToolExample/particle_tool_example.tscn
 res://addons/vkaParticleTool/plugin.gd
+res://addons/vkaParticleTool/particle_control_panel.gd
+res://README.md

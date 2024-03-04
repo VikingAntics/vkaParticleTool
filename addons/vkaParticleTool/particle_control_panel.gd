@@ -100,11 +100,9 @@ func _on_stop_all_button_pressed() -> void:
 				snode.emitting = false
 
 
-## get_top_parent starts the emitter for the currently selected particle
-## and all of its children.
-##
-## Checks the parents of the currently selected particle to try
-## to find all of the children.
+## get_top_parent tries to find the first parent that is not a particle
+## and then uses that parent to propagate a restart() method call to 
+## execute all the particles emitters who are children.
 func get_top_parent() -> Node:
 	var selectedNodes = editor_selection.get_selected_nodes()
 	var topNode: Node 
