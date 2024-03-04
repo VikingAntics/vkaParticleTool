@@ -1,7 +1,7 @@
 # vkaParticleTool
  Particle control panel resides in bottom of Godot Inspector to help test multi-layer particles
 
- The PNG files in the example are used from the Keeney Particle Pack with much appreciation.
+ The PNG files in the example are used from the Keney Particle Pack with much appreciation.
 
  Sometimes, when you are editing multiple GPUParticles in your project, it gets cumbersome to constantly highlight
  all of the particles, scroll up to the Emitting checkbox, and then go back and forth making changes and repeating the process
