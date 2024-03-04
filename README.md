@@ -14,11 +14,17 @@
  These are the features:
 
  Emit Button - Emits the currently selected particle (i.e. sets emitting = true)
+ 
  Emit All Button - Tries to find the parent node of all the particles, the first non-particle node and isses a particle restart method call to all of the particles that are lower in the tree.
+ 
  Stop Button - Stops the currently selected particle (i.e. set emitting = false
+ 
  Stop All Button - Tries to find the parent node of all the particles, the first non-particle node and traverses the children setting any particles emitting property = false
+ 
  One Shot Button - Will change the one_shot property of all selected particles to true or false, depening on whether the button is toggled on or off.
+ 
  Auto Emit Checkbox - Sometimes you need a particle to keep restarting over and over again automatically while you play with the different properties in the ParticleProcessMaterial.  If the box is checked, the particle that was selected when the button was checked will keep playing every interval seconds until you uncheck it.  This gives you the ability to see your changes as you make them without constantly replaying the particle.
+ 
 
  LIMITATIONS:
 
