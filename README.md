@@ -12,7 +12,8 @@
  forth to test.
 
 Installation:
-The vkaParticleTool folder needs to be in the res://addons folder in your Godot project.  Then goto menu Project->Project Settings->Plugins and make sure vkaParticleTool is checked/enabled.
+
+ The vkaParticleTool folder needs to be in the res://addons folder in your Godot project.  Then goto menu Project->Project Settings->Plugins and make sure vkaParticleTool is checked/enabled.
 
  These are the features:
 
