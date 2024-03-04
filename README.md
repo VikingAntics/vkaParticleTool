@@ -17,9 +17,9 @@
  
  Emit All Button - Tries to find the parent node of all the particles, the first non-particle node and isses a particle restart method call to all of the particles that are lower in the tree.
  
- Stop Button - Stops the currently selected particle (i.e. set emitting = false
+ Stop Button - Stops the currently selected particle (i.e. set emitting = false)
  
- Stop All Button - Tries to find the parent node of all the particles, the first non-particle node and traverses the children setting any particles emitting property = false
+ Stop All Button - Tries to find the parent node of all the particles, the first non-particle node and traverses the children setting any particles emitting = false
  
  One Shot Button - Will change the one_shot property of all selected particles to true or false, depening on whether the button is toggled on or off.
  
@@ -29,10 +29,10 @@
  LIMITATIONS:
 
  I have not tested this with 3D Particles, but the code is fairly generic.
- The Emit All WILL NOT work with Sub Emitters at the moment unless the Sub Emitter particles are in a differnt tree branch in the Scene Editor.  It always tried to restart all the child particles.
+ The Emit All WILL NOT work with Sub Emitters at the moment unless the Sub Emitter particles are in a different tree branch in the Scene Editor.  It always tries to restart all the child particles in the parent node branch.
 
  Let me know if you like it or hate it or have any suggestions, but it has made creating particles easier for me, if only I were better at art. :(
 
- There is an example folder that you can test the tool with in the project.
+ There is an example folder, ParticleToolExample, that you can test the tool with in the project.  The particle is ugly, but that is my lacking artistic skills. Again, thank you Kenney for use of the 3 PNG textues from the Kenney Particle Pack.
 
  
