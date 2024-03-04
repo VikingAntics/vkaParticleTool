@@ -1,0 +1,137 @@
+[gd_scene load_steps=3 format=3 uid="uid://hmj2i3vmbyby"]
+
+[ext_resource type="Script" path="res://addons/vkaParticleTool/particle_control_panel.gd" id="1_ldm06"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mftcb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 0, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="ParticleControlPanel" type="Control"]
+self_modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(0, 160)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+script = ExtResource("1_ldm06")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.143706, 0.378591, 1, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="Controls" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="EmitButtons" type="HBoxContainer" parent="MarginContainer/Controls"]
+layout_mode = 2
+
+[node name="Emit" type="Button" parent="MarginContainer/Controls/EmitButtons"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Emit"
+
+[node name="Emit All" type="Button" parent="MarginContainer/Controls/EmitButtons"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Emit All"
+
+[node name="StopButtons" type="HBoxContainer" parent="MarginContainer/Controls"]
+auto_translate_mode = 1
+layout_mode = 2
+
+[node name="Stop" type="Button" parent="MarginContainer/Controls/StopButtons"]
+auto_translate_mode = 1
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Stop
+"
+
+[node name="StopAll" type="Button" parent="MarginContainer/Controls/StopButtons"]
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Stop All
+"
+
+[node name="Interval Emitting" type="HBoxContainer" parent="MarginContainer/Controls"]
+layout_mode = 2
+size_flags_stretch_ratio = 8.0
+
+[node name="OneShot" type="Button" parent="MarginContainer/Controls/Interval Emitting"]
+unique_name_in_owner = true
+auto_translate_mode = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_colors/font_pressed_color = Color(1, 1, 0, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mftcb")
+toggle_mode = true
+text = "One Shot
+"
+
+[node name="AutoEmitCheckbox" type="CheckBox" parent="MarginContainer/Controls/Interval Emitting"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+text = "Auto Emit: 
+"
+
+[node name="AutoEmitSlider" type="HSlider" parent="MarginContainer/Controls/Interval Emitting"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+size_flags_stretch_ratio = 3.0
+min_value = 1.0
+max_value = 20.0
+value = 1.0
+rounded = true
+allow_greater = true
+
+[node name="AutoEmitAmountLabel" type="Label" parent="MarginContainer/Controls/Interval Emitting"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/Controls/EmitButtons/Emit" to="." method="_on_emit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Controls/EmitButtons/Emit All" to="." method="_on_emit_all_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Controls/StopButtons/Stop" to="." method="_on_stop_button_pressed"]
+[connection signal="pressed" from="MarginContainer/Controls/StopButtons/StopAll" to="." method="_on_stop_all_button_pressed"]
+[connection signal="toggled" from="MarginContainer/Controls/Interval Emitting/OneShot" to="." method="_on_one_shot_toggled"]
+[connection signal="toggled" from="MarginContainer/Controls/Interval Emitting/AutoEmitCheckbox" to="." method="_on_auto_emit_checkbox_toggled"]
+[connection signal="value_changed" from="MarginContainer/Controls/Interval Emitting/AutoEmitSlider" to="." method="_on_autoemit_slider_value_changed"]
